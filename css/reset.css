@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Silkscreen:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    border: none;
+    font-family: "Silkscreen", cursive;
+}
+
+/* font-family: 'Poppins', sans-serif; */
