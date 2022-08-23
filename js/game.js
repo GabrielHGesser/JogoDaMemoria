@@ -1,4 +1,6 @@
 const grid = document.querySelector(".grid");
+const spanPlayer = document.querySelector(".player");
+const timer = document.querySelector(".timer");
 
 const characters = [
     "Capitão_America",
@@ -27,7 +29,8 @@ const checkEndGame = () => {
 
     setTimeout(() => {
         if (disabledCards.length >= 20) {
-            alert("Parabens");
+            clearInterval(this.loop);
+            alert(`Parabéns, ${localStorage.getItem("player")}! Seu Tempo foi de: ${timer.innerHTML}`);
         }
     }, 200);
 };
@@ -61,13 +64,17 @@ const revealCard = (event) => {
     }
 
     if (firstCard === "") {
-        event.target.parentNode.classList.add("reveal_card");
-        firstCard = event.target.parentNode;
+        if (event.target.parentNode.className.includes("card")) {
+            event.target.parentNode.classList.add("reveal_card");
+            firstCard = event.target.parentNode;
+        }
     } else if (secondCard === "") {
-        event.target.parentNode.classList.add("reveal_card");
-        secondCard = event.target.parentNode;
+        if (event.target.parentNode.className.includes("card")) {
+            event.target.parentNode.classList.add("reveal_card");
+            secondCard = event.target.parentNode;
 
-        checkCards();
+            checkCards();
+        }
     }
 };
 
@@ -98,4 +105,17 @@ const loadGame = () => {
     });
 };
 
-loadGame();
+const startTimer = () => {
+    this.loop = setInterval(() => {
+        const currentTime = +timer.innerHTML;
+
+        timer.innerHTML = currentTime + 1;
+    }, 1000);
+};
+
+// Quando a janela tiver carregada executa isso aqui
+window.onload = () => {
+    spanPlayer.innerHTML = `Name: ${localStorage.getItem("player")}`;
+    startTimer();
+    loadGame();
+};

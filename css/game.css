@@ -1,3 +1,33 @@
+body {
+    background-color: #000000;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+}
+
+header {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+header span {
+    color: #feb641;
+    font-size: 18px;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -22,7 +52,7 @@
     position: absolute;
     background-size: cover;
     background-position: center;
-    border: 2px solid #333;
+    border: 2px solid #14213d;
     border-radius: 10px;
     transition: all 400ms ease;
 }
@@ -43,4 +73,83 @@
 .disabled_card {
     filter: saturate(0.2);
     opacity: 0.8;
+}
+
+
+@media (max-width: 883px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 600px;
+        gap: 20px;
+    }
+
+    header {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 20px;
+        padding: 20px;
+    }
+    
+    header span {
+        color: #feb641;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 625px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 400px;
+        gap: 20px;
+    }
+
+    header {
+        max-width: 500px;
+    }
+    
+    header span {
+        font-size: 20px;
+    }
+
+    .card {
+        aspect-ratio: 2/3; /* definir uma proporção */
+    }
+}
+
+@media (max-width: 456px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 300px;
+        gap: 20px;
+    }
+
+    header {
+        max-width: 300px;
+        flex-direction: column;
+    }
+
+    .card {
+        aspect-ratio: 2/2; /* definir uma proporção */
+    }
+}
+
+@media (max-width: 320px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 250px;
+        gap: 20px;
+    }
+
+    header {
+        max-width: 300px;
+        flex-direction: column;
+    }
+
+    .card {
+        aspect-ratio: 2/2; /* definir uma proporção */
+    }
 }

@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #000000;
 }
 
 .login_form {
@@ -11,10 +12,9 @@
     align-items: center;
     justify-content: center;
     width: 400px;
-    height: 500px;
-    border: 3px solid #3e3b40;
+    height: 400px;
+    border: 3px solid #e5e5e5;
     border-radius: 50px;
-    box-shadow: 10px 10px 10px 0 #333;
 }
 
 .login_header {
@@ -30,35 +30,75 @@
 }
 
 .login_header h1 {
-    color: #333;
-    font-size: 1.5em;
+    color: #fca311;
+    font-size: 1.7em;
 }
 
 .login_input {
-    border: 2px solid #333;
+    border: 2px solid #ffffff;
     border-radius: 8px;
-    color: #333;
-    font-size: 1em;
+    color: #ffffff;
+    font-size: 1.2em;
     margin-bottom: 20px;
     max-width: 300px;
     outline: none;
     padding: 15px;
     width: 100%;
+    background-color: #000000;
 }
 
 .login_button {
-    background-color: #ee665c;
+    background-color: #fca311;
     border-radius: 8px;
     color: #fff;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.2em;
     max-width: 300px;
     padding: 15px;
     width: 100%;
 }
 
 .login_button:disabled {
-    background-color: #eee;
-    color: #aaa;
+    background-color: #fff;
+    color: #14213d;
     cursor: auto;
+}
+
+
+@media (max-width: 415px) {
+    .login_form {
+        width: 320px;
+        height: 500px;
+    }
+
+    .login_header h1 {
+        font-size: 1.4em;
+    }
+
+    .login_input {
+        max-width: 250px;
+    }
+    
+    .login_button {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 333px) {
+    .login_form {
+        width: 250px;
+        height: 400px;
+    }
+
+    .login_header h1 {
+        font-size: 1.2em;
+    }
+
+    .login_input {
+        max-width: 210px;
+    }
+    
+    .login_button {
+        max-width: 210px;
+    }
 }
